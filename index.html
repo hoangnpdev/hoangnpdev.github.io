@@ -1,113 +1,141 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
-<style>
-body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
 
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://www.w3schools.com/w3images/coffeehouse.jpg");
-  min-height: 75%;
-}
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://www.w3schools.com/w3images/coffeehouse.jpg");
+      min-height: 75%;
+    }
 
-.menu {
-  display: none;
-}
-</style>
+    .menu {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- top menu -->
-<div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-half">
-      <a href="#search" class="w3-button w3-block w3-black">SEARCH</a>
+  <!-- top menu -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s2">
+        <div class="w3-sidebar w3-bar-block w3-border-right w3-black" style="display:none" id="mySidebar">
+          <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+          <a href="#" class="w3-bar-item w3-button">Link 1</a>
+          <a href="#" class="w3-bar-item w3-button">Link 2</a>
+          <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
+        <div class="w3-black">
+          <button class="w3-button w3-black w3-xlarge" onclick="w3_open()">☰</button>
+        </div>
+      </div>
+      <div class="w3-col s10">
+        <div class="w3-row">
+          <div class="w3-col s10">
+            <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
+          </div>
+          <div class="w3-col s2">
+            <button class="w3-bar-item w3-button w3-white w3-mobile">SEARCH</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w3-half">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
+    <div class="w3-row w3-black web-clip">
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
+      <span class="w3-tag">
+        <a href="#tag" class="w3-button w3-black">TAG</a>
+      </span>
     </div>
   </div>
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col">
-      <a href="#tag" class="w3-button w3-block w3-black web-clip">TAG</a>
-    </div>
-  </div>
-</div>
 
-<!-- bottom menu -->
-<div class="w3-bottom">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-half">
-      <a href="#home" class="w3-button w3-block w3-black" onclick="w3.show('.web-clip'); w3.hide('.web-save')">CLIP</a>
-    </div>
-    <div class="w3-half">
-      <a href="#save" class="w3-button w3-block w3-black" onclick="w3.hide('.web-clip'); w3.show('.web-save')">SAVE</a>
+  <!-- bottom menu -->
+  <div class="w3-bottom">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s6">
+        <a href="#home" class="w3-button w3-block w3-black"
+          onclick="w3.show('.web-clip'); w3.hide('.web-save')">CLIP</a>
+      </div>
+      <div class="w3-col s6">
+        <a href="#save" class="w3-button w3-block w3-black"
+          onclick="w3.hide('.web-clip'); w3.show('.web-save')">SAVE</a>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="web-clip" style="margin-top: 150px; margin-bottom: 100px;">
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+  <div class="web-clip" style="margin-top: 150px; margin-bottom: 100px;">
+    <div id="web-clip-list" class="w3-row-padding">
+      <div w3-repeat="clips" class="w3-third w3-container w3-margin-bottom">
+        <img src={{img}} alt="Norway" style="width:100%"
+          class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p>{{title}}</p>
+          <p>{{url}} <a href={{url}}><span>link</span></a><span><b>save</b> </span><span><b>block</b> </span></p>
+        </div>
       </div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <!-- Second Photo Grid-->
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="https://www.w3schools.com/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Lorem Ipsum</b></p>
+          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
+            gravida diam non fringilla.</p>
+        </div>
       </div>
-    </div>
-    <div class="w3-third w3-container">
-      <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="https://www.w3schools.com/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Lorem Ipsum</b></p>
+          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
+            gravida diam non fringilla.</p>
+        </div>
       </div>
-    </div>
-  </div>
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="https://www.w3schools.com/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="https://www.w3schools.com/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container">
-      <img src="https://www.w3schools.com/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-third w3-container">
+        <img src="https://www.w3schools.com/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>Lorem Ipsum</b></p>
+          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
+            gravida diam non fringilla.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Header with image -->
-<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <!-- Header with image -->
+  <!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
     <span class="w3-tag">Open from 6am to 5pm</span>
   </div>
@@ -119,11 +147,11 @@ body, html {
   </div>
 </header> -->
 
-<!-- Add a background color and large text to the whole page -->
-<!-- <div class="w3-sand w3-grayscale w3-large"> -->
+  <!-- Add a background color and large text to the whole page -->
+  <!-- <div class="w3-sand w3-grayscale w3-large"> -->
 
-<!-- About Container -->
-<!-- <div class="w3-container" id="about">
+  <!-- About Container -->
+  <!-- <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
     <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -138,8 +166,8 @@ body, html {
   </div>
 </div> -->
 
-<!-- Menu Container -->
-<!-- <div class="w3-container" id="menu">
+  <!-- Menu Container -->
+  <!-- <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
@@ -190,8 +218,8 @@ body, html {
   </div>
 </div> -->
 
-<!-- Contact/Area Container -->
-<!-- <div class="w3-container" id="where" style="padding-bottom:32px;">
+  <!-- Contact/Area Container -->
+  <!-- <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
     <p>Find us at some address at some place.</p>
@@ -208,33 +236,34 @@ body, html {
   </div>
 </div> -->
 
-<!-- End page content -->
-</div>
+  <!-- End page content -->
+  </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
-</footer>
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+  </footer>
 
 
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script src="js/io.js"></script>
+  <script>
+    w3.getHttpObject("asset/test_data.json", display_clip);
+
+    function display_clip(clips) {
+      clips = {"clips": clips};
+      w3.displayObject("web-clip-list", clips)
+    }
+
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 
 </body>
+
 </html>
