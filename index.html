@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
 <style>
 body, html {
   height: 100%;
@@ -26,26 +27,87 @@ body, html {
 </head>
 <body>
 
-<!-- Links (sit on top) -->
+<!-- top menu -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    <div class="w3-half">
+      <a href="#search" class="w3-button w3-block w3-black">SEARCH</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
-    </div>
-    <div class="w3-col s3">
+    <div class="w3-half">
       <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+  </div>
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col">
+      <a href="#tag" class="w3-button w3-block w3-black web-clip">TAG</a>
+    </div>
+  </div>
+</div>
+
+<!-- bottom menu -->
+<div class="w3-bottom">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-half">
+      <a href="#home" class="w3-button w3-block w3-black" onclick="w3.show('.web-clip'); w3.hide('.web-save')">CLIP</a>
+    </div>
+    <div class="w3-half">
+      <a href="#save" class="w3-button w3-block w3-black" onclick="w3.hide('.web-clip'); w3.show('.web-save')">SAVE</a>
+    </div>
+  </div>
+</div>
+
+<div class="web-clip" style="margin-top: 150px; margin-bottom: 100px;">
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://www.w3schools.com/w3images/p1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://www.w3schools.com/w3images/p2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="https://www.w3schools.com/w3images/p3.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
     <span class="w3-tag">Open from 6am to 5pm</span>
   </div>
@@ -55,13 +117,13 @@ body, html {
   <div class="w3-display-bottomright w3-center w3-padding-large">
     <span class="w3-text-white">15 Adr street, 5015</span>
   </div>
-</header>
+</header> -->
 
 <!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
+<!-- <div class="w3-sand w3-grayscale w3-large"> -->
 
 <!-- About Container -->
-<div class="w3-container" id="about">
+<!-- <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
     <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -74,10 +136,10 @@ body, html {
     <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
     <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
   </div>
-</div>
+</div> -->
 
 <!-- Menu Container -->
-<div class="w3-container" id="menu">
+<!-- <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
@@ -126,10 +188,10 @@ body, html {
     </div>  
     <img src="https://www.w3schools.com/w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
   </div>
-</div>
+</div> -->
 
 <!-- Contact/Area Container -->
-<div class="w3-container" id="where" style="padding-bottom:32px;">
+<!-- <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
     <p>Find us at some address at some place.</p>
@@ -144,16 +206,18 @@ body, html {
       <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
     </form>
   </div>
-</div>
+</div> -->
 
 <!-- End page content -->
 </div>
 
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
 </footer>
 
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <script>
 // Tabbed Menu
 function openMenu(evt, menuName) {
