@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="css/custom.css">
 
 
@@ -51,10 +52,10 @@
       <div class="w3-col s10">
         <div class="w3-row">
           <div class="w3-col s10">
-            <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
+            <input id="search-form" type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
           </div>
           <div class="w3-col s2">
-            <button class="w3-bar-item w3-button w3-white w3-mobile">SEARCH</button>
+            <button class="w3-bar-item w3-button w3-white w3-mobile" onclick="search()">SEARCH</button>
           </div>
         </div>
       </div>
@@ -131,10 +132,32 @@
   <script src="js/io.js"></script>
   <script>
     w3.getHttpObject("asset/test_data.json", display_clip);
+    document.getElementById("search-form")
+      .addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          search();
+        }
+      });
 
     function display_clip(clips) {
       clips = { "clips": clips };
       w3.displayObject("web-clip-list", clips)
+    }
+
+    function search() {
+
+      w3.getHttpObject("asset/test_data.json", display_filter_clip);
+    }
+
+    function display_filter_clip(clips) {
+      word = document.getElementById("search-form").value;
+      word = word.trim();
+      if (word !== '') {
+        clips = clips.filter(clip => clip.title.includes(word));
+      }
+      if (clips.length > 0)
+        display_clip(clips);
     }
 
     function w3_open() {

@@ -16,6 +16,21 @@
     background-color: black;
 }
 
+.flex-container p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 18px;
+
+    /* overflow: hidden;
+    white-space:nowrap;
+    width: 100%;
+    text-overflow: ellipsis; */
+}
+
 .flex-container > div > div {
     position: relative;
     bottom: 0px;
