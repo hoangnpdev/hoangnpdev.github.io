@@ -1,0 +1,35 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-container > div {
+    margin: 10px;
+    padding: 20px;
+    width: 360px;
+    height: 400px;
+}
+
+.flex-container > div > img {
+    height: 70%;
+    object-fit: contain;
+    background-color: black;
+}
+
+.flex-container > div > div {
+    position: relative;
+    bottom: 0px;
+    height: 30%;
+}
+
+.corner-bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.corner-bottom-right {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
