@@ -108,7 +108,7 @@
             <p>{{title}}</p>
           </div>
           <div class="corner-bottom-left">
-            {{url}}
+            {{source}}
           </div>
           <div class="corner-bottom-right">
             <a href={{url}} style="text-decoration: none;">
@@ -142,6 +142,7 @@
 
     function display_clip(clips) {
       clips = { "clips": clips };
+      console.log(clips)
       w3.displayObject("web-clip-list", clips)
     }
 
