@@ -60,18 +60,8 @@
         </div>
       </div>
     </div>
-    <div class="w3-row w3-black web-clip slide-tag">
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
-      <a href="#tag" class="w3-button w3-black">TAG</a>
+    <div class="w3-row w3-black web-clip slide-tag" id="web-category-list">
+      <a w3-repeat="categorys" href="#{{category}}" id="{{category}}" ><span class="w3-button">{{category}}</span></a>
     </div>
   </div>
 
@@ -92,7 +82,7 @@
   <div class="web-clip w3-container w3-margin-left w3-margin-right" style="margin-top: 150px; margin-bottom: 100px;">
     <div id="web-clip-list" class="flex-container">
       <div w3-repeat="clips" class="w3-card ">
-        <img src={{img}} alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <!-- <img src={{img}} alt="Norway" style="width:100%" class="w3-hover-opacity"> -->
         <div>
           <div>
             <p>{{title}}</p>
@@ -120,90 +110,7 @@
 
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="js/io.js"></script>
-  <script>
-    w3.getHttpObject("asset/test_data.json", display_clip);
-    document.getElementById("search-form")
-      .addEventListener("keyup", function (event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-          search();
-        }
-      });
-
-    function display_clip(clips) {
-      clips = { "clips": clips };
-      console.log(clips)
-      w3.displayObject("web-clip-list", clips)
-    }
-
-    function search() {
-
-      w3.getHttpObject("asset/test_data.json", display_filter_clip);
-    }
-
-    function display_filter_clip(clips) {
-      word = document.getElementById("search-form").value;
-      word = word.trim();
-      if (word !== '') {
-        clips = clips.filter(clip => clip.title.includes(word));
-      }
-      if (clips.length > 0)
-        display_clip(clips);
-    }
-
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
-
-<script>
-  const slider = document.querySelector('.slide-tag');
-  let mouseDown = false;
-  let startX, scrollLeft;
-  
-  let startDragging = function (e) {
-    mouseDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  };
-  let stopDragging = function (event) {
-    mouseDown = false;
-  };
-  
-  slider.addEventListener('mousemove', (e) => {
-    e.preventDefault();
-    if(!mouseDown) { return; }
-    const x = e.pageX - slider.offsetLeft;
-    const scroll = x - startX;
-    slider.scrollLeft = scrollLeft - scroll;
-  });
-  
-  
-  // Add the event listeners
-  slider.addEventListener('mousedown', startDragging, false);
-  slider.addEventListener('mouseup', stopDragging, false);
-  slider.addEventListener('mouseleave', stopDragging, false);
-
-  slider.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    if(!mouseDown) { return; }
-      const x = e.changedTouches[0].pageX - slider.offsetLeft;
-      const scroll = x - startX;
-      slider.scrollLeft = scrollLeft - scroll;
-  });
-  let startTouching = function (e) {
-    mouseDown = true;
-      startX = e.changedTouches[0].pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-  };
-  slider.addEventListener('touchstart', startTouching, false);
-  slider.addEventListener('touchend', stopDragging, false);
-  </script>
-
+  <script src="js/ui.js"></script>
 </body>
 
 </html>

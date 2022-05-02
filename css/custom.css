@@ -49,6 +49,10 @@
     right: 0px;
 }
 
+
+
+
+
 .slide-tag {
    overflow-x: hidden; 
    white-space: nowrap;
@@ -56,4 +60,12 @@
 
 .slide-tag * {
     display: inline-block;
+}
+
+.slide-tag>:target {
+    background-color: red;
+}
+
+.slide-tag>a {
+    text-decoration: none;
 }
