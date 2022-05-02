@@ -48,3 +48,12 @@
     bottom: 0px;
     right: 0px;
 }
+
+.slide-tag {
+   overflow-x: hidden; 
+   white-space: nowrap;
+}
+
+.slide-tag * {
+    display: inline-block;
+}
