@@ -55,7 +55,7 @@
             <input id="search-form" type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
           </div>
           <div class="w3-col s2">
-            <button class="w3-bar-item w3-button w3-white w3-mobile" onclick="search()">SEARCH</button>
+            <button class="w3-bar-item w3-button w3-white w3-mobile" id="search-button">SEARCH</button>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
   <div class="web-clip w3-container w3-margin-left w3-margin-right" style="margin-top: 150px; margin-bottom: 100px;">
     <div id="web-clip-list" class="flex-container">
       <div w3-repeat="clips" class="w3-card ">
-        <img src={{img}} alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <!-- <img src={{img}} alt="Norway" style="width:100%" class="w3-hover-opacity"> -->
         <div>
           <div>
             <p>{{title}}</p>
@@ -109,8 +109,7 @@
 
 
   <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <script src="js/io.js"></script>
-  <script src="js/ui.js"></script>
+  <script type="module" src="js/ui.js"></script>
 </body>
 
 </html>
