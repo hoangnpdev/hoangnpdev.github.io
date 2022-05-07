@@ -30,6 +30,13 @@ function search() {
   word = word.trim();
   display_clips(tree.find_clips_by_keyword(word));
 }
+window.search = search; // global this
+
+function search_category(category) {
+  var clips = tree.get_category_clips(category);
+  display_clips(clips);
+}
+window.search_category = search_category;
 
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
@@ -96,7 +103,3 @@ document.getElementById("search-form")
             search();
         }
     });
-
-// add event enter key to search
-document.getElementById("search-button")
-    .addEventListener("click", search)

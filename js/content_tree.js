@@ -6,17 +6,26 @@ export class ContentTree {
     }
 
     list_category() {
-        var categories = []
-        for (var category of this.content_tree) {
-            categories.push({ "category": Object.keys(category)[0] });
-        }
-        categories = { "categorys": categories };
+        var categories = [];
+        // for (var category of this.content_tree) {
+        //     categories.push({ "category": Object.keys(category)[0] });
+        // }
+        for (var category of Object.keys(this.content_tree))
+            categories.push({ "category": category })
+        categories = { "categorys": categories};
         return categories;
     }
 
     get_all_clips() {
-        var clips = { "clips": this.content_tree[0]["japanese"] };
-        return clips;
+        var categories = Object.keys(this.content_tree)
+        var result = []
+        for (var category of categories)
+            result = result.concat(this.content_tree[category])
+        return {"clips": result};
+    }
+
+    get_category_clips(category) {
+        return {"clips": this.content_tree[category]}
     }
 
     find_clips_by_keyword(word) {
